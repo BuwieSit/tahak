@@ -2,16 +2,17 @@
 
 @font-face {
   font-family: titleFont;
-  src: url("./fonts/AbrilFatface-Regular.ttf");
+  src: url("./fonts/Butler/Butler_Regular.otf");
 }
 @font-face {
   font-family: textFont;
-  src: url("./fonts/brandongrot/Brandon_Grotesque_regular.otf");
+  src: url("./fonts/helvetica/HelveticaNeueLight.otf");
 }
 @font-face {
-  font-family: secondFont;
-  src: url("./fonts/anonymous/AnonymousPro-Regular.ttf");
+    font-family: descFont;
+    src: url("./fonts/helvetica/HelveticaNeueUltraLight.otf");
 }
+
 
 :root {
     --fontTitle: "Bebas Neue", sans-serif;
@@ -27,7 +28,7 @@ body {
     border: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: var(--fontText);
+    font-family: textFont;
 }
 
 header {
@@ -49,7 +50,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    font-family: var(--fontTitle);
+    font-family: titleFont;
     font-weight: 600;
     padding: 0 2%;
     font-weight: 700;
@@ -67,7 +68,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-family: var(--fontText);
+    font-family: textFont;
     font-size: clamp(0.8rem, 1.3vw, 1.5rem);
 
 }
@@ -120,16 +121,62 @@ header {
 
 
 .main-content {
-    padding: 5% 0;
+    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    background: 
+        linear-gradient(#dadada 50%, #005aa8, #dadada);
+
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.about {
+    width: 90%;
+    padding: 5% 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-template-areas: 
+        "abouthead" "abouthead"
+        "aboutdesc" "aboutimg"
+        "aboutimg" "aboutdesc"
+        "aboutdesc" "aboutimg"
+    ;
+}
+
+.about-title {
+    grid-area: abouthead;
+    font-family: titleFont;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+}
+.about-desc {
+    grid-area: aboutdesc;
+    font-family: descFont;
+    font-weight: 700;
+    font-size: clamp(0.7rem, 1.2vw, 1.8rem);
+    text-align: justify;
+}
+
+.about-img {
+    grid-area: aboutimg;
+    width: 100%;
+}
 .hero {
-    font-family: var(--fontText);
+    font-family: textFont;
     font-weight: 700;
     width: 90%;
     display: grid;
@@ -143,6 +190,9 @@ header {
     gap: 0;
     column-gap: 2rem; 
     row-gap: 1rem;
+    animation: fade;
+    animation-duration: 3s;
+    animation-timeline: view(90% 5%);
 }
 
 .title-container {
@@ -151,7 +201,7 @@ header {
     flex-direction: column;
 }
 .hero-title {
-    font-family: var(--fontTitle);
+    font-family: titleFont;
     font-weight: 700;
     font-size: clamp(3rem, 4vw, 4rem);
     line-height: 0;
@@ -177,7 +227,7 @@ header {
     width: 50%;
     display: flex;
     flex-direction: column;
-    background: #e0e0e0;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow:  20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
     padding: 5%;
@@ -185,12 +235,12 @@ header {
 .card-title {
     font-size: clamp(1.5rem, 1vw, 2rem);
     font-weight: 700;
-    font-family: var(--fontText);
+    font-family: titleFont;
 }
 .card-desc {
     font-size: clamp(0.8rem, 0.8vw, 1rem);
     font-weight: 500;
-    font-family: var(--fontT);
+    font-family: textFont;
 }
 
 .image-container {
@@ -214,19 +264,32 @@ header {
     align-items: center;
     justify-content: center;
     gap: 50px;
+    animation: fade;
+    animation-duration: 1.5s;
+    animation-timeline: view(100% 5%);
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .cont-title {
-    font-family: var(--fontTitle);
+    font-family: titleFont;
     font-weight: 700;
     font-size: clamp(3rem, 1vw, 4rem);
     text-align: center;
     line-height: 0;
+    transform: translateY(-10%);
+
 }
 .cont-desc {
     text-align: center;
     text-justify: auto;
     font-style: italic;
-    font-family: var(--fontSubtext);
+    font-family: textFont;
     font-weight: 400;
     color: #5e5e5e;
     font-size: clamp(1rem, 1vw, 2rem);
@@ -242,8 +305,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: var(--fontText);
-    font-size: clamp(0.5rem, 0.8vw, 1.5rem);
+    font-family: textFont;
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
     font-weight: 700;
 }
 .aw-link {
@@ -292,14 +355,57 @@ header {
     padding: 2% 0;
 }
 .activity-title {
-    font-family: var(--fontTitle);
+    font-family: titleFont;
     font-weight: 600;
     font-size: clamp(1.5rem, 2vw, 3rem);
     line-height: 0;
 }
 .activity-desc {
     font-size: clamp(0.5rem, 1vw, 1.5rem);
-    font-family: var(--fontSubtext);
-    font-weight: 300;
+    font-family: textFont;
+    font-weight: 400;
     line-height: 0;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #dadada;
+}
+
+.foot-wrapper {
+    width: 100%;
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.foot-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.social-img {
+    width: 40px;
+}
+
+.navigate > a {
+    font-family: var(--fontText);
+    font-weight: 700;
+    text-decoration: none;
+    color: #696969;
+}
+.navigate > a:hover {
+    text-decoration: underline;
+}
+.copyright-text {
+    font-family: var(--fontSubtext);
+    color: #696969;
+    font-weight: 450;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
 }
