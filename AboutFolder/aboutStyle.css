@@ -1,0 +1,51 @@
+@import url('../globalStyle.css');
+
+.main-content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.about {
+    width: 90%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: fade;
+    animation-timeline: view();
+    animation-duration: 2s;
+}
+.about-section:nth-child(3) {
+    flex-direction: row-reverse;
+}
+.about-title {
+    font-family: titleFont;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    animation: fadeIn both;
+    animation-duration: 3s;
+    animation-timeline: view(40% 10%);
+}
+.about-desc {
+    font-family: textFont;
+    font-weight: 500;
+    font-size: clamp(0.7rem, 1.2vw, 1.8rem);
+    text-align: justify;
+    width: 40%;
+}
+.about-desc > span {
+    font-style: oblique;
+    font-weight: 700;
+}
+.about-img {
+    width: 40%;
+}

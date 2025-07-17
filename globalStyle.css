@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: titleFont;
+  src: url("./fonts/Butler/Butler_Regular.otf");
+}
+@font-face {
+  font-family: textFont;
+  src: url("./fonts/helvetica/HelveticaNeueLight.otf");
+}
+@font-face {
+    font-family: descFont;
+    src: url("./fonts/helvetica/HelveticaNeueUltraLight.otf");
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+:root {
+    --fontTitle: "Bebas Neue", sans-serif;
+    --fontText: "Montserrat", sans-serif;
+    --fontSubtext: "Roboto", sans-serif;
+
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
