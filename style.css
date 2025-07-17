@@ -40,6 +40,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background: url(./images/rocks.webp) 100% no-repeat fixed;
+    background-size: cover  ;
     color: white;
 }
 .logo-cont {
@@ -147,33 +148,35 @@ header {
 .about {
     width: 90%;
     padding: 5% 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    grid-template-areas: 
-        "abouthead" "abouthead"
-        "aboutdesc" "aboutimg"
-        "aboutimg" "aboutdesc"
-        "aboutdesc" "aboutimg"
-    ;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
-
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.about-section:nth-child(3) {
+    flex-direction: row-reverse;
+}
 .about-title {
-    grid-area: abouthead;
     font-family: titleFont;
     font-size: clamp(1rem, 2.5vw, 2.5rem);
 }
 .about-desc {
-    grid-area: aboutdesc;
-    font-family: descFont;
-    font-weight: 700;
+    font-family: textFont;
+    font-weight: 500;
     font-size: clamp(0.7rem, 1.2vw, 1.8rem);
     text-align: justify;
+    width: 40%;
 }
-
+.about-desc > span {
+    font-style: oblique;
+    font-weight: 700;
+}
 .about-img {
-    grid-area: aboutimg;
-    width: 100%;
+    width: 40%;
 }
 .hero {
     font-family: textFont;
@@ -264,9 +267,9 @@ header {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    animation: fade;
+    animation: fade both;
     animation-duration: 1.5s;
-    animation-timeline: view(100% 5%);
+    animation-timeline: view(200% 1%);
 }
 @keyframes fade {
     0% {
@@ -279,7 +282,7 @@ header {
 .cont-title {
     font-family: titleFont;
     font-weight: 700;
-    font-size: clamp(3rem, 1vw, 4rem);
+    font-size: calc(clamp(3rem, 1vw, 4rem) - 20%);
     text-align: center;
     line-height: 0;
     transform: translateY(-10%);
