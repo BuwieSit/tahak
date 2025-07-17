@@ -283,7 +283,7 @@ header {
 .cont-title {
     font-family: titleFont;
     font-weight: 700;
-    font-size: calc(clamp(3rem, 1vw, 4rem) - 20%);
+    font-size: calc(clamp(2rem, 3vw, 4rem) - 20%);
     text-align: center;
     line-height: 0;
     transform: translateY(-10%);
