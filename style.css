@@ -13,7 +13,25 @@
     src: url("./fonts/helvetica/HelveticaNeueUltraLight.otf");
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
 
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 :root {
     --fontTitle: "Bebas Neue", sans-serif;
     --fontText: "Montserrat", sans-serif;
@@ -112,8 +130,6 @@ header {
     font-family: textFont;
     font-weight: 700;
     font-size: clamp(1rem, 1.5vw, 2rem);
-    box-shadow: 0px 0px 10px inset black;
-    color: black;
     cursor: pointer;
 }
 .create-btn > p {
@@ -134,16 +150,7 @@ header {
 
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-10%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0%);
-    }
-}
+
 
 .about {
     width: 90%;
@@ -156,6 +163,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    animation: fade;
+    animation-timeline: view();
+    animation-duration: 2s;
 }
 .about-section:nth-child(3) {
     flex-direction: row-reverse;
@@ -163,6 +173,9 @@ header {
 .about-title {
     font-family: titleFont;
     font-size: clamp(1rem, 2.5vw, 2.5rem);
+    animation: fadeIn both;
+    animation-duration: 3s;
+    animation-timeline: view(40% 10%);
 }
 .about-desc {
     font-family: textFont;
@@ -193,7 +206,7 @@ header {
     gap: 0;
     column-gap: 2rem; 
     row-gap: 1rem;
-    animation: fade;
+    animation: fade both;
     animation-duration: 3s;
     animation-timeline: view(90% 5%);
 }
@@ -271,14 +284,7 @@ header {
     animation-duration: 1.5s;
     animation-timeline: view(200% 1%);
 }
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+
 .cont-title {
     font-family: titleFont;
     font-weight: 700;
