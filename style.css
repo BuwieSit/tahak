@@ -17,7 +17,81 @@ body {
     justify-content: center;
     gap: 50px;
     background: 
-        linear-gradient(#dadada 50%, #005aa8);
+        linear-gradient(#dadada 50%, #3B7A57);
+}
+
+.detail-img {
+    position: absolute;
+    width: 300px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    opacity: 0.5;
+}
+#greenTree {
+    top: 0;
+    right: calc(0% - 50px);
+}
+#bonfire {
+    top: 20%;
+    left: calc(0% - 100px);
+}
+#yoga {
+    top: 70%;
+    left: calc(0% - 100px);
+}
+#tea {
+    right: calc(0% - 100px);
+}
+#cocoTree {
+    right: calc(0% - 10px);
+    bottom: 0;
+}
+#coconut {
+    left: calc(0% - 100px);
+    transform: rotateY(180deg);
+}
+.intro-cont {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: url('./images/sta_lucia.jpg') center center no-repeat fixed;
+    background-size: cover;
+    z-index: 1;
+    color: white;
+}
+
+.intro-cont::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+    pointer-events: none;
+}
+
+.intro-cont > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.intro-title {
+    font-family: secondFont;
+    font-size: clamp(2rem, 5vw, 4rem);
+
+}
+.intro-subtitle {
+    font-family: textFont;
+    font-style: italic;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    width: 50%;
+
+
 }
 .custom-shape-divider-bottom-1752798360 {
     position: absolute;
@@ -37,31 +111,42 @@ body {
 }
 
 .custom-shape-divider-bottom-1752798360 .shape-fill {
-    fill: #FFFFFF;
+    fill: var(--White);
 }
 
-.about {
+
+
+.about, .why-cont {
     width: 90%;
     padding: 5% 0;
     display: flex;
     flex-direction: column;
-    gap: 50px;
 }
-.about-section {
+.sections-alignment {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: auto;
+    animation: fade both;
+    animation-timeline: view();
+    animation-duration: 2s;
+}
+.about-section {
+
     grid-template-areas: 
+    "title aboutimg"
     "desc aboutimg"
     "button aboutimg"
     ;
-    align-items: center;
-    justify-content: space-between;
 
-    gap: 10px;
-    animation: fade;
-    animation-timeline: view();
-    animation-duration: 2s;
-    height: auto;
+}
+.why-section {
+    grid-template-areas: 
+    "whyimg title"
+    "whyimg desc"
+    ;
 
 }
 .action-button {
@@ -70,26 +155,40 @@ body {
     width: 30%;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
-    border: 2px solid 	#3B7A57;
-    color: #3B7A57;
+    color: #FFFFFF;
+    border: none;
+    background-color: #3B7A57;
     font-family: textFont;
     font-weight: 600;
     font-size: clamp(1rem, 1vw, 2rem);
     transition: all 0.3s ease;
 }
 .action-button:hover {
-    color: #FFFFFF;
-    background-color: 	#3B7A57;
+    background-color: #265039;
+    transform: scale(1.1);
 }
-.about-title {
-    font-family: titleFont;
-    font-size: clamp(1rem, 2.5vw, 2.5rem);
-    animation: fadeIn both;
-    animation-duration: 3s;
-    animation-timeline: view(40% 10%);
+.action-button:active {
+    transform: scale(0.9);
 }
 
-.about-desc {
+.section-title {
+    grid-area: title;
+    font-family: titleFont;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+}
+.about-title {
+    animation: fadeIn both;
+    animation-timeline: view(60% 20%);
+    animation-duration: 2s;
+}
+.why-title {
+    animation: fadeFromRight both;
+    animation-timeline: view(60% 20%);
+    animation-duration: 2s;
+    text-align: end;
+}
+
+.about-desc, .why-desc {
     grid-area: desc;
     font-family: textFont;
     font-weight: 500;
@@ -107,102 +206,27 @@ body {
     justify-content: flex-start;
     width: 100%;
     height: auto;
-    background-color: red;
-}
-.hero {
-    font-family: textFont;
-    font-weight: 700;
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "title image"
-        "card image";
-    padding: 2% 2%;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 0;
-    column-gap: 2rem; 
-    row-gap: 1rem;
-    animation: fade both;
-    animation-duration: 3s;
-    animation-timeline: view(90% 5%);
 }
 
-.title-container {
-    grid-area: title;
-    display: flex;
-    flex-direction: column;
-}
-.hero-title {
-    font-family: titleFont;
-    font-weight: 700;
-    font-size: clamp(3rem, 4vw, 4rem);
-    line-height: 0;
-}
-.hero-desc {
-    font-family: textFont;
-    font-weight: 500;
-    font-style: italic;
-    font-size: clamp(1rem, 1vw, 2.5rem);
-    line-height: 1;
-}
 
-.cards-container {
-    grid-area: card;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    width: 100%;
-}
-
-.card-item {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
-    padding: 5%;
-}
-.card-title {
-    font-size: clamp(1.5rem, 1vw, 2rem);
-    font-weight: 700;
-    font-family: titleFont;
-}
-.card-desc {
-    font-size: clamp(0.8rem, 0.8vw, 1rem);
-    font-weight: 500;
-    font-family: textFont;
-}
-
-.image-container {
-    grid-area: image;
-    background: #e0e0e0;
-    box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
-    max-width: 600px;
-    height: 400px;
-}
-#side-image {
-    width: 100%;
-    height: 100%;
-}
 
 .activities-cont {
     width: 90%;
     padding: 5% 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 50px;
     animation: fade both;
     animation-duration: 1.5s;
     animation-timeline: view(200% 1%);
 }
-
+.act-text {
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    font-style: italic;
+    color: #5e5e5e;
+}
 .cont-title {
     font-family: titleFont;
     font-weight: 700;
@@ -245,14 +269,22 @@ body {
     gap: 5px;
     transition: all 0.3s ease;
     height: 100%;
+    border: 1px solid #3B7A57;
+    padding: 1%;
 
 }
 .aw-link > img {
     width: 20px;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 .aw-link:hover {    
     transform: scale(1.1);
+    background-color: #3B7A57;
+    color: white;
+}
+.aw-link:hover > img {
+    filter: invert();
 }
 
 .activities-slider {
@@ -265,16 +297,23 @@ body {
     "preview" "preview" "preview"
     "desc" "desc" "desc"
     ;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .activity-item {
     display: flex;
     flex-direction: column;
     align-items: start;
+    transition: all 0.3s ease;
 }
 
 .activity-img {
     grid-area: preview;
     width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
 
 }
 .activity-item-wrapper {
@@ -285,12 +324,77 @@ body {
     font-family: titleFont;
     font-weight: 600;
     font-size: clamp(1.5rem, 2vw, 3rem);
-    line-height: 0;
+    line-height: 1;
+    text-shadow: 1px 1px 1px white;
 }
 .activity-desc {
     font-size: clamp(0.5rem, 1vw, 1.5rem);
     font-family: textFont;
     font-weight: 400;
-    line-height: 0;
+    line-height: 1;
+
 }
 
+.margin {
+    margin-top: 10%;
+    background-color: #fafafa;
+}
+.contact-section {
+    background-color: #fafafa;
+    padding: 5% 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--White);
+
+}
+
+
+.contact-title {
+    font-family: titleFont;
+    text-align: center;
+    font-size: clamp(3rem, 4vw, 4rem);
+    animation: fadeDown;
+    animation-timeline: view(50% 5%);
+    animation-duration: 3s;
+}
+
+.contact-wrapper {
+    padding: 2% 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    animation: fadeDown both;
+    animation-timeline: view(80% 5%);
+    animation-duration: 3s;
+}
+
+.contact-card {
+    background-color: rgba(253, 203, 61, 0.6);
+    padding: 2%;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 9/12;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 2px 2px 1px black;
+}
+.contact-card:nth-child(2) {
+    background-color: rgba(253, 203, 61, 0.6);
+}
+.contact-icon {
+    width: 40%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    
+}
+.contact-multiple {
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+}

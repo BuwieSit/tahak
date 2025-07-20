@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    background-color: white;
 }
 
 .about {
@@ -48,4 +49,90 @@
 }
 .about-img {
     width: 40%;
+    filter: drop-shadow(5px 5px 5px);
+}
+
+
+.hero {
+    font-family: textFont;
+    font-weight: 700;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title title"
+        "card image";
+    padding: 2% 2%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    column-gap: 2rem; 
+    row-gap: 1rem;
+    animation: fade both;
+    animation-duration: 3s;
+    animation-timeline: view(90% 5%);
+}
+
+.title-container {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-title {
+    font-family: titleFont;
+    font-weight: 700;
+    font-size: clamp(3rem, 4vw, 4rem);
+    line-height: 0;
+}
+.hero-desc {
+    font-family: textFont;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(1rem, 1vw, 2.5rem);
+    line-height: 1;
+}
+
+.cards-container {
+    grid-area: card;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.card-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+    padding: 5%;
+}
+.card-title {
+    font-size: clamp(1.5rem, 1vw, 2rem);
+    font-weight: 700;
+    font-family: titleFont;
+}
+.card-desc {
+    font-size: clamp(0.8rem, 0.8vw, 1rem);
+    font-weight: 500;
+    font-family: textFont;
+}
+
+.image-container {
+    grid-area: image;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+    max-width: 600px;
+    height: 400px;
+}
+#side-image {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(5px 5px 5px);
 }

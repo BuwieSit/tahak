@@ -32,5 +32,3 @@ navlist.forEach(nav => {
     });
 
 });
-
-
