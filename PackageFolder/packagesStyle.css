@@ -1,1 +1,278 @@
 @import url('./globalStyle.css');
+
+
+.main-content {
+    width: 100%;
+    padding: 3% 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: #dadada ;
+}
+
+.intro-cont {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: calc(-4vh - 4%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/sta_lucia.jpg') center center no-repeat fixed;
+    background-size: cover;
+    z-index: 1;
+    color: white;
+}
+
+
+
+.intro-cont::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+    pointer-events: none;
+}
+
+.intro-cont > * {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-title {
+    width: 60%;
+    text-align: center;
+    font-family: titleFont;
+    font-size: clamp(3rem, 3vw, 4rem);
+}
+.intro-desc {
+
+}
+.intro-button {
+    padding: 2%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    border: none;
+    background-color: #3B7A57;
+    font-family: textFont;
+    font-weight: 600;
+    font-size: clamp(1rem, 1vw, 2rem);
+    transition: all 0.3s ease;
+}
+
+.intro-button:hover {
+    background-color: #265039;
+    transform: scale(1.1);
+}
+
+.intro-button:active {
+    transform: scale(0.9);
+}
+.categories {
+    width: auto;
+    max-width: 80%;
+    background-color: #3B7A57;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.category-section {
+    width: 30%;
+    text-align: justify;
+}
+.category-title {
+    font-family:  titleFont;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+.category-desc {
+    font-family: textFont;
+    font-weight: 500;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+}
+
+.packages {
+    width: 100%;
+    height: auto;
+    padding: 2% 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+}
+.package-card {
+    width: 400px;
+    aspect-ratio: 10 / 10;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow: -20px -20px 60px #bebebe,
+                 20px 20px 60px #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 48px; /* create space for footer info */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.package-card:hover {
+    background-color: var(--Yellow);
+    box-shadow: 0 0 50px var(--Yellow);
+}
+.package-card:hover > .package-image {
+    transform: scale(1.05);
+}
+.package-image {
+    transition: all 0.3s ease;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.package-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: titleFont  ;
+    padding: 0 16px;
+    margin: 12px 0 4px;
+    
+}
+
+.package-desc {
+    font-size: 1em;
+    padding: 0 16px;
+    margin-bottom: auto; 
+    text-align: justify;
+}
+
+.package-info {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    font-size: 0.95em;
+}
+
+
+.framework {
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.framework-section {
+    position: relative;
+    width: 80%;
+    border-radius: 100px;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.framework-title {
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.senses-card {
+    width: 100px;
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.senses-card:hover {
+    filter: drop-shadow(0 0 20px var(--Green));
+}
+.senses-img {
+    width: 80%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+.stages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1rem;
+    padding: 2%;
+}
+
+.stage-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    font-family: titleFont;
+}
+
+.stage-card {
+    aspect-ratio: 10 / 12;
+    padding: 2%;
+    background-color: var(--Green);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.stage-card:hover {
+    box-shadow: 0 0 20px var(--Yellow);
+}
+
+.framework-section.stages:hover .stage-card {
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.3s ease;
+}
+
+.framework-section.stages .stage-card:hover {
+  filter: none !important;
+}
+
+.scard1 {
+    background: url('../images/pakikipagkapwa.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.scard2 {
+    background: url('../images/pakikisama.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.scard3 {
+    background: url('../images/pakikipaglagayan.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.scard4 {
+    background: url('../images/pakikisangkot.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.scard5 {
+    background: url('../images/pakikipagkapwa.jpg');
+    background-position: center;
+    background-size: cover;
+}

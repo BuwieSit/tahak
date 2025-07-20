@@ -4,8 +4,7 @@ body {
     margin: 0;
     border: 0;
     padding: 0;
-    overflow-x: hidden;
-    font-family: textFont;
+
 }
 
 .main-content {
@@ -54,11 +53,11 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
+    margin-top: calc(-4vh - 4%); /* adjust based on actual header + padding height */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     background: url('./images/sta_lucia.jpg') center center no-repeat fixed;
     background-size: cover;
     z-index: 1;
@@ -354,7 +353,7 @@ body {
     text-align: center;
     font-size: clamp(3rem, 4vw, 4rem);
     animation: fadeDown;
-    animation-timeline: view(50% 5%);
+    animation-timeline: view(70% 1%);
     animation-duration: 3s;
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="1024">
     <link rel="icon" href="../images/tahak_icon.png">
     <link rel="stylesheet" href="../globalStyle.css">
+    <link rel="stylesheet" href="./packagesStyle.css">
     <title>Tahak</title>
 </head>
 <body>
@@ -13,11 +14,103 @@
         <script src="../renders/renderHeader.js"></script>
     </header>
 
-    <div class="main-content">
-
+    <div class="intro-cont">
+        <h1 class="intro-title">TahaK was born to help you slow down, breathe deep, and reconnect with what truly matters</h1>
+        <p class="intro-subtitle">—yourself, your culture, your community.</p>
+        <button class="intro-button" id="introBtn">Explore experiences</button>
     </div>
 
 
+    <div class="main-content" id="mainContent">
+
+        <div class="categories">
+            <section class="category-section katipan">
+                <h5 class="category-title">Katipan - Couples</h5>
+                <p class="category-desc">
+                    For couples seeking deeper connection. Enjoy serene, intimate activities that nurture love and shared reflection, inspired by the spirit of kapwa.
+                </p>
+            </section>
+
+            <section class="category-section kaagapay">
+                <h5 class="category-title">Kaagapay - For Families and Groups</h5>
+                <p class="category-desc">
+                    For families and groups who value togetherness. Strengthen bonds through shared nature experiences and joyful, mindful moments.
+                </p>
+            </section>
+
+            <section class="category-section kasama">
+                <h5 class="category-title">Kasama - For Joiners</h5>
+                <p class="category-desc">
+                    For solo joiners craving community. Be part of an inclusive journey of healing and discovery where no one is ever alone.
+                </p>
+            </section>
+            <!-- CATEGORIES CONTENT END -->
+        </div>
+
+        <div class="packages">
+
+            <div class="package-card">
+                <img class="package-image" src="../images/mountain.jpg" alt="Kapwa Journey Image">
+                <h4 class="package-title">Kapwa Immersion Journey</h4>
+                <p class="package-desc">Offers a full-depth experience ideal for individuals or groups seeking a transformative journey into Filipino values of community and connection.</p>
+                <div class="package-info">
+                    <p class="days">3D 2N</p>
+                    <p class="price">₱200</p>
+                </div>
+            </div>
+            <!-- PACKAGES END -->
+        </div>
+
+
+
+        <div class="framework">
+            
+            <section class="framework-section senses">
+                <p class="framework-title">Five-senses framework:</p>
+                <div class="senses-card">
+                    <img class="senses-img" src="../images/icons/see.png">
+                </div>
+                <div class="senses-card">
+                    <img class="senses-img" src="../images/icons/hear.png">
+                </div>
+                <div class="senses-card">
+                    <img class="senses-img" src="../images/icons/smell.png">
+                </div>
+                <div class="senses-card">
+                    <img class="senses-img" src="../images/icons/taste.png">
+                </div>
+                <div class="senses-card">
+                    <img class="senses-img" src="../images/icons/touch.png">
+                </div>
+            </section>
+            <section class="framework-section stages">
+                <p class="stage-title">Five-stage healing framework:</p>
+                <div class="stage-card scard1">
+                    <p class="stage-desc">Pakikipagkapwa</p>
+                </div>
+
+                <div class="stage-card scard2">
+                    <p class="stage-desc">Pakikisama</p>
+                </div>
+
+                <div class="stage-card scard3">
+                    <p class="stage-desc">Pakikipag-lagayang Loob</p>
+                </div>
+
+                <div class="stage-card scard4">
+                    <p class="stage-desc">Pakikisangkot</p>
+                </div>
+
+                <div class="stage-card scard5">
+                    <p class="stage-desc">Pakikiisa</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- MAIN CONTENT END -->
+    </div>
+
+    <script src="../PackageFolder/packageScript.js"></script>
     <footer id="foot">
         <script src="../renders/renderFooter.js"></script>
     </footer>
