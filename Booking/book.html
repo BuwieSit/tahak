@@ -6,17 +6,52 @@
     <meta name="viewport" content="1024">
     <link rel="icon" href="../images/tahak_icon.png">
     <link rel="stylesheet" href="../globalStyle.css">
+    <link rel="stylesheet" href="./bookStyle.css">
     <title>TahaK: Booking</title>
 </head>
 <body>
         <div class="loader-cont" id="loaderCont">
         <div class="loader"></div>
     </div>
+
     <header id="head">
         <script src="../renders/renderHeader.js"></script>
     </header>
 
-    <h2 class="booked-title"></h2>
+    <div class="main-content">
+
+            <table class="booked-table">
+               
+                <thead>
+                    <tr>
+                        <th class="booked-title" colspan="3"></th>
+                    </tr>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="booked-text booked-act">Kawa Bath</td>
+                        <td class="booked-text booked-price">250 P</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+
+            <div class="booked-quote">
+                <form class="booked-form">
+                    <label>Travel date</label>
+                    <input type="date" class="booked-date">
+                </form>
+            </div>
+
+        <!-- MAIN CONTENT END -->
+    </div>
+
+
+    
 
     <footer id="foot">
         <script src="../renders/renderFooter.js"></script>

@@ -1,1 +1,47 @@
 @import url('../globalStyle.css');
+
+.main-content {
+    padding: 3% 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+
+}
+
+.booked-title {
+    font-family: titleFont;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.booked-table {
+    background-color: rgb(59, 122, 87, 0.5);
+    box-shadow: 2px 2px 1px black;
+    padding: 1%;
+    width: 35%;
+}
+.booked-table > thead {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: textFont;
+    font-weight: 800;
+
+}
+.booked-table th, tr, td {
+    padding: 3%;
+    border: 1px solid black;
+}
+.booked-text {
+    font-weight: 500;
+    color: rgb(61, 61, 61);
+}
+
+.booked-quote {
+    padding: 2%;
+
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  20px 20px 30px #bebebe,
+                -20px -20px 30px #ffffff;
+}

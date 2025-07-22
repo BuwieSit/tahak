@@ -55,15 +55,7 @@
     }
 }
 
-@keyframes blurIn {
-    0% {
-        filter: blur(10px);
-    }
 
-    100% {
-        filter: blur(0px);
-    }
-}
 :root {
     --fontTitle: "Bebas Neue", sans-serif;
     --fontText: "Montserrat", sans-serif;
