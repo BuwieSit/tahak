@@ -1,11 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     const depth = path.split('/').filter(Boolean).length;
-
     let prefix = './';
     if (depth === 2) prefix = '../';
     if (depth >= 3) prefix = '../../';
-
 
 const expRandomizerMap = {
     "1": { image: `${prefix}images/pictures/tea.jpg`, title: "Herbal Tea or Coconut Charcoal Detox Welcome Drink", desc: "A calming welcome drink to energize and detoxify." },
@@ -19,11 +17,8 @@ const expRandomizerMap = {
     "12": { image: `${prefix}images/pictures/kawa.jpeg`, title: "Kawa Bath", desc: "A hot herbal bath experience in a giant cauldron with a view." },
     "14": { image: `${prefix}images/pictures/mountbanahaw.jpg`, title: "Orientation & Intention Setting Circle Under Trees at Mt. Banahaw", desc: "Begin the journey with shared intentions and grounding under trees." },
     "16": { image: `${prefix}images/pictures/treeplant.jpg`, title: "Tree Planting Activity", desc: "Give back to nature by planting native trees with guided care." },
-
 };
 
-
-    // Randomize and pick 3 unique keys
     function getRandomUniqueKeys(obj, count) {
         const keys = Object.keys(obj);
         const selected = new Set();
@@ -36,14 +31,13 @@ const expRandomizerMap = {
         return [...selected];
     }
 
-    const selectedKeys = getRandomUniqueKeys(expRandomizerMap, 3); //ADD HERE
+    const selectedKeys = getRandomUniqueKeys(expRandomizerMap, 3); 
 
     function randomizeImages() {
             
             selectedKeys.forEach(key => {
             const entry = expRandomizerMap[key];
 
-            // Normalize entry if it's a string (image only)
             const data = typeof entry === "string"
                 ? { image: entry, title: "Untitled", desc: "No description available." }
                 : entry;
@@ -71,10 +65,10 @@ const expRandomizerMap = {
 
     randomizeTrigger.addEventListener('click', () => {
         const container = document.getElementById('activitySlider');
-        container.innerHTML = ''; // Clear previous content
+        container.innerHTML = ''; 
         const newKeys = getRandomUniqueKeys(expRandomizerMap, 3);
         
-        // Render new set
+   
         newKeys.forEach(key => {
             const entry = expRandomizerMap[key];
             const data = typeof entry === "string"

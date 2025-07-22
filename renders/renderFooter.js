@@ -13,17 +13,17 @@ window.addEventListener('DOMContentLoaded', () => {
     const footerContent = 
             `<div class="foot-wrapper">
                 <div class="foot-container socials">
-                    <img src="${prefix}images/facebook.png" alt="fb" class="social-img">
-                    <img src="${prefix}images/instagram.png" alt="ig" class="social-img">
-                    <img src="${prefix}images/tiktok.png" alt="tiktok" class="social-img">
-                    <img src="${prefix}images/twitter.png" alt="twt" class="social-img">
+                    <img src="${prefix}images/facebook.png" alt="fb" class="social-img" id="fb">
+                    <img src="${prefix}images/instagram.png" alt="ig" class="social-img" id="ig">
+                    <img src="${prefix}images/tiktok.png" alt="tiktok" class="social-img" id="tk">
+                    <img src="${prefix}images/twitter.png" alt="twt" class="social-img" id="twt">
                 </div>
                 <div class="foot-container navigate">
-                    <a href="" class="foot-links">About Us</a>
-                    <a href="" class="foot-links">Contact Us</a>
-                    <a href="" class="foot-links">Privacy Policy</a>
-                    <a href="" class="foot-links">Terms & Conditions</a>
-                    <a href="" class="foot-links">Create your Experience</a>
+                    <a href="${prefix}AboutFolder/about.html" class="foot-links">About Us</a>
+                    <a href="${prefix}ContactFolder/contact/html" class="foot-links">Contact Us</a>
+                    <a  class="foot-links">Privacy Policy</a>
+                    <a class="foot-links">Terms & Conditions</a>
+                    <a href="${prefix}CreateFolder/create.html" class="foot-links">Create your Experience</a>
                 </div>
             </div>
 
@@ -38,6 +38,31 @@ window.addEventListener('DOMContentLoaded', () => {
         console.error("No <footer> element found on the page.");
     }
 
+    const social = document.querySelectorAll('.social-img');
+    social.forEach(soc => {
+
+        soc.addEventListener('click', () => {
+            const socType = soc.id;
+            switch (socType) {
+                case "fb":
+                    window.open("https://www.facebook.com/profile.php?id=61578753895819", '_blank').focus();
+                    break;
+                case "ig":
+                    window.open("https://www.instagram.com/tahak.kalikasan/", '_blank').focus();
+                    break;
+                case "tk":
+                    window.open("https://www.tiktok.com/@tahak.kalikasan", '_blank').focus();
+                    break;
+                case "twt":
+                    window.open("https://x.com/tahak_kalikasan", '_blank').focus();
+                    break;
+                default:
+                    console.log("No such link");
+                    break;
+            }
+        });
+    });
 
 });
+
 

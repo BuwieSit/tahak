@@ -35,14 +35,13 @@ function resetPopupTimeout() {
   }, remainingTime);
 }
 
-// Show popup with content
 cards.forEach(card => {
   card.addEventListener('click', () => {
     const bg = window.getComputedStyle(card).backgroundImage;
     const desc = card.querySelector('.stage-desc').textContent;
 
     popupFront.style.backgroundImage = bg;
-    popupBack.style.backgroundImage = bg; // SAME background on back
+    popupBack.style.backgroundImage = bg; 
     frontText.textContent = desc;
     backText.textContent = `${desc} — This is the detailed explanation of this stage.`;
 

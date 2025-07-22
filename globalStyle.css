@@ -223,7 +223,9 @@ footer {
 }
 .social-img {
     width: 40px;
+    cursor: pointer;
 }
+
 
 .navigate > a {
     font-family: var(--fontText);

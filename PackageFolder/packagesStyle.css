@@ -1,6 +1,5 @@
 @import url('./globalStyle.css');
 
-
 .main-content {
     width: 100%;
     padding: 3% 0;
@@ -28,8 +27,6 @@
     color: white;
 }
 
-
-
 .intro-cont::before {
     content: "";
     position: absolute;
@@ -50,9 +47,7 @@
     font-family: titleFont;
     font-size: clamp(3rem, 3vw, 4rem);
 }
-.intro-desc {
 
-}
 .intro-button {
     padding: 2%;
     cursor: pointer;
@@ -117,9 +112,10 @@
                  20px 20px 60px #ffffff;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: hidden;
     position: relative;
-    padding-bottom: 48px; /* create space for footer info */
+    padding-bottom: 48px;
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -153,14 +149,30 @@
     margin-bottom: auto; 
     text-align: justify;
 }
-
+.package-button {
+    margin-top: 5%;
+    padding: 4%;
+    width: 80%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    border: none;
+    background-color: #3B7A57;
+    font-family: textFont;
+    font-weight: 600;
+    font-size: clamp(1rem, 1vw, 2rem);
+    transition: all 0.3s ease;
+}
+.package-button:hover {
+    background-color: #265039;
+}
+.package-button:active {
+    transform: scale(0.9);
+}
 .package-info {
     display: flex;
+    width: 80%;
     justify-content: space-between;
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
     font-size: 0.95em;
     color: #808080;
     font-weight: 700;
@@ -292,6 +304,7 @@
 .popup-front,
 .popup-back {
   position: absolute;
+
   width: 100%;
   height: 100%;
   border-radius: 12px;
@@ -300,9 +313,9 @@
   align-items: center;
   justify-content: center;
   padding: 12%;
-  text-align: center;
+  text-align: center; 
   font-family: textFont;
-  font-weight: 600;
+  font-weight: 600; 
   color: white;
 }
 
