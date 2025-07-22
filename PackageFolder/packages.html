@@ -10,6 +10,9 @@
     <title>Tahak</title>
 </head>
 <body>
+    <div class="loader-cont" id="loaderCont">
+        <div class="loader"></div>
+    </div>
     <header id="head">
         <script src="../renders/renderHeader.js"></script>
     </header>
@@ -20,11 +23,13 @@
         <button class="intro-button" id="introBtn">Explore experiences</button>
     </div>
 
-
+    
     <div class="main-content" id="mainContent">
-
+        
         <div class="categories">
+            <p class="category-text">Categories (number of person)</p>
             <section class="category-section katipan">
+                <img class="category-image" src="../images/couple.jpg">
                 <h5 class="category-title">Katipan - Couples</h5>
                 <p class="category-desc">
                     For couples seeking deeper connection. Enjoy serene, intimate activities that nurture love and shared reflection, inspired by the spirit of kapwa.
@@ -32,13 +37,16 @@
             </section>
 
             <section class="category-section kaagapay">
+                <img class="category-image" src="../images/family.jpg">
                 <h5 class="category-title">Kaagapay - For Families and Groups</h5>
+                
                 <p class="category-desc">
                     For families and groups who value togetherness. Strengthen bonds through shared nature experiences and joyful, mindful moments.
                 </p>
             </section>
 
             <section class="category-section kasama">
+                <img class="category-image" src="../images/solo.jpg">
                 <h5 class="category-title">Kasama - For Joiners</h5>
                 <p class="category-desc">
                     For solo joiners craving community. Be part of an inclusive journey of healing and discovery where no one is ever alone.
@@ -86,35 +94,38 @@
         </div>
 
 
+        <div class="transition">
+            <h4 class="transition-text">OUR ECO WELLNESS FRAMEWORKS</h4>
+        </div>
 
-       <section class="framework-section senses">
-    <p class="framework-title">Five-senses framework:</p>
+        <section class="framework-section senses">
+            <p class="framework-title">Five-senses framework:</p>
 
-    <div class="senses-card">
-        <img class="senses-img" src="../images/icons/see.png">
-        <div class="senses-popup">Sight Engagement</div>
-    </div>
+            <div class="senses-card" id="sight">
+                <img class="senses-img" src="../images/icons/see.png">
+                <div class="senses-popup" >Sight Engagement</div>
+            </div>
 
-    <div class="senses-card">
-        <img class="senses-img" src="../images/icons/hear.png">
-        <div class="senses-popup">Hearing Engagement</div>
-    </div>
+            <div class="senses-card" id="hear">
+                <img class="senses-img" src="../images/icons/hear.png">
+                <div class="senses-popup" >Hearing Engagement</div>
+            </div>
 
-    <div class="senses-card">
-        <img class="senses-img" src="../images/icons/smell.png">
-        <div class="senses-popup">Smell Engagement</div>
-    </div>
+            <div class="senses-card" id="smell">
+                <img class="senses-img" src="../images/icons/smell.png">
+                <div class="senses-popup" >Smell Engagement</div>
+            </div>
 
-    <div class="senses-card">
-        <img class="senses-img" src="../images/icons/taste.png">
-        <div class="senses-popup">Taste Engagement</div>
-    </div>
+            <div class="senses-card" id="taste">
+                <img class="senses-img" src="../images/icons/taste.png">
+                <div class="senses-popup" >Taste Engagement</div>
+            </div>
 
-    <div class="senses-card">
-        <img class="senses-img" src="../images/icons/touch.png">
-        <div class="senses-popup">Touch Engagement</div>
-    </div>
-</section>
+            <div class="senses-card" id="touch">
+                <img class="senses-img" src="../images/icons/touch.png">
+                <div class="senses-popup" >Touch Engagement</div>
+            </div>
+        </section>
 
             <section class="framework-section stages">
                 <p class="stage-title">Five-stage healing framework:</p>
@@ -151,9 +162,29 @@
                     </div>
                 </div>
             <!-- POPUP CONTAINER -->
-
         </div>
-
+           
+        <div class="feature-senses">
+        </div>
+        <div class="feature-green">
+             <div class="green-container">
+                <div class="bird-container bird-container--one">
+                    <div class="bird bird--one"></div>
+                </div>
+                
+                <div class="bird-container bird-container--two">
+                    <div class="bird bird--two"></div>
+                </div>
+                
+                <div class="bird-container bird-container--three">
+                    <div class="bird bird--three"></div>
+                </div>
+                
+                <div class="bird-container bird-container--four">
+                    <div class="bird bird--four"></div>
+                </div>
+            </div>
+        </div>
         <!-- MAIN CONTENT END -->
     </div>
 
@@ -161,5 +192,6 @@
     <footer id="foot">
         <script src="../renders/renderFooter.js"></script>
     </footer>
+    <script src="../globalScript.js"></script>
 </body>
 </html>
