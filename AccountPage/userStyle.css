@@ -1,0 +1,114 @@
+@import url('../globalStyle.css');
+
+body {
+    background: url('../images/pictures/farm.jpg') 100% fixed;
+    background-size: cover;
+}
+.main-user-cont {
+    background-color: rgba(59, 122, 87, 0.8);
+    width: 90%;
+    padding: 5% 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-section {
+    width: 90%;
+    border-radius: 10px;
+    background-color: #fafafa;
+    padding: 2% 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.home {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.home:hover {
+    filter: drop-shadow(0 0 10px #fff);
+}
+.home-text:hover {
+    text-decoration: underline;
+}
+.home-icon {
+    width: 50px;
+    object-fit: contain;
+    aspect-ratio: 1;
+    
+}
+
+.home-text {
+    color: #fff;
+    font-family: textFont;
+    font-weight: 700;
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.user-picture {
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}   
+
+.user-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.profile-wrapper {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+.detail-image {
+    width: 20px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.user-name {
+    font-family: titleFont;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+.seed {
+    justify-content: center;
+    gap: 30px;
+}
+.seed-picture {
+    width: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.seed-picture:nth-child(1) {
+    transform: rotateY(180deg);
+}
+.seed-counter {
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-family: secondFont;
+    font-weight: 500;
+
+}
+
+.details {
+    flex-direction: column;
+}
+
+.seed-info-title {
+    font-family: titleFont;
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.seed-info-desc {
+    font-size: clamp(1rem, 1vw, 2rem);
+    width: 60%;
+    text-align: justify;
+}

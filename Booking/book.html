@@ -42,8 +42,24 @@
 
             <div class="booked-quote">
                 <form class="booked-form">
-                    <label>Travel date</label>
-                    <input type="date" class="booked-date">
+                    <div class="form-group">
+                        <label>Travel date</label>
+                        <input type="date" class="start-date">
+                        <input type="date" class="end-date">
+                    </div>
+
+                    <div class="form-group pax-group">
+                        <label>Pax</label>
+                        <label class="radio-label"><input class="form-radio" type="radio" value="Katipan" name="pax">Katipan (2 pax)</label>
+                        <label class="radio-label"><input class="form-radio" type="radio" value="Kasama" name="pax">Kasama (1 person)</label>
+                        <label class="radio-label"><input class="form-radio" type="radio" value="Kaagapay" name="pax">Kaagapay (Group)</label>
+                        
+                    </div>
+
+                    <div class="form-group">
+
+                    </div>
+
                 </form>
             </div>
 
@@ -56,6 +72,8 @@
     <footer id="foot">
         <script src="../renders/renderFooter.js"></script>
     </footer>
+    
+    <script src="../renders/renderAccPopup.js"></script>
     <script src="../globalScript.js"></script>
     <script src="./bookScript.js"></script>
 

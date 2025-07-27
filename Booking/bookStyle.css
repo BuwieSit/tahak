@@ -40,8 +40,49 @@
 
 .booked-quote {
     padding: 2%;
-
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow:  20px 20px 30px #bebebe,
                 -20px -20px 30px #ffffff;
+    max-width: 50%;
+    height: auto;
 }
+.booked-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+
+}
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.pax-group {
+    flex-direction: column;
+    
+}
+.radio-label {
+    padding: 10%;
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-wrap: nowrap;
+    background-color: green;
+}
+.radio-label > input {
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+.radio-label:has(> input.checked) {
+     background-color: red;
+}   

@@ -125,6 +125,153 @@ body {
   100%{transform: rotate(1turn)}
 }
 
+.account-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5% 0;
+    background-color: rgba(59, 122, 87, 0.8);
+    z-index: 300;
+    display: flex;
+
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.accpopup-show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.accpopup-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.account-form {
+    width: 50%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.account-form > input {
+    padding: 2%;
+    width: 50%;
+}
+.account-form {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    transform: translate(50%, -80%);
+    transition: all 0.3s ease;
+}
+.acc-title {
+    font-family: titleFont;
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #fff;
+}
+
+.submit-button {
+    padding: 2%;
+    width: 50%;
+    cursor: pointer;
+}
+
+.change {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    right: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert();
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.arrow {
+    transition: all 0.3s ease;
+}
+.back-arrow {
+    width: 50px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%) scale(1);
+    filter: invert();
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.back-arrow:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.change:hover > .arrow  {
+    transform: scale(1.2);
+}
+
+.change-text {
+    font-weight: 700;
+    font-family: titleFont;
+    font-size: clamp(1vw, 1.5vw, 2rem);
+}
+.change > img {
+    width: 80px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+.login-show {
+    transition: all 0.3s ease;
+    transform: translate(0% 0%);
+    opacity: 1;
+}
+.login-hide {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translate(-20%, 0%);
+}
+.reg-show {
+    transition: all 0.3s ease;
+    transform: translate(0% 0%);
+    opacity: 1;
+}
+.reg-hide {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translate(20%, 0%);
+}
+.reg-hide, .login-hide {
+    pointer-events: none;
+} 
+.login-hide, .login-show {
+    pointer-events: all;
+}
+
+.arrow-left-show {
+    transform: rotateY(0deg);
+    transition: transform 0.3s ease;
+    opacity: 1;
+}
+
+.arrow-right-show {
+    transform: rotateY(180deg);
+    transition: transform 0.3s ease;
+    opacity: 1;
+}
+
+
 header {
     width: 100%;
     max-height: 4vh;

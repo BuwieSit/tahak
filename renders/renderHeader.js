@@ -2,8 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const path = window.location.pathname;
     const depth = path.split('/').filter(Boolean).length;
-
-
     let prefix = './';
     if (depth === 2) prefix = '../';
     if (depth >= 3) prefix = '../../';
@@ -33,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("No <header> element found on the page.");
     }
+
 
 
     const navlist = document.querySelectorAll('.nav-list li');
@@ -71,6 +70,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
- 
- 
+    const userTrigger = document.querySelector('.tahak-logo');
+
+    userTrigger.addEventListener('click', () => {
+        window.location.href = `./AccountPage/user.html`;
+    });
+    
 });

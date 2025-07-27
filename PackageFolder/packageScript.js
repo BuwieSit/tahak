@@ -1,9 +1,9 @@
 const expButton = document.getElementById('introBtn');
-const mainContent = document.getElementById('mainContent');
+const packageCont = document.getElementById('packageCont');
 
 expButton.addEventListener('click', () => {
 
-    mainContent.scrollIntoView({
+    packageCont.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
     });

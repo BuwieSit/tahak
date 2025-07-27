@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url('../images/sta_lucia.jpg') center center no-repeat fixed;
+    background: url('../images/mountain.jpg') center center no-repeat fixed;
     background-size: cover;
     z-index: 1;
     color: white;
