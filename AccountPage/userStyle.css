@@ -112,3 +112,8 @@ body {
     width: 60%;
     text-align: justify;
 }
+.seed-image {
+    width: 150px;
+    object-fit: contain;
+    aspect-ratio: 1;
+}

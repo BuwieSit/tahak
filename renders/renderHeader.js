@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const userTrigger = document.querySelector('.tahak-logo');
 
     userTrigger.addEventListener('click', () => {
-        window.location.href = `./AccountPage/user.html`;
+        window.location.href = `${prefix}AccountPage/user.html`;
     });
     
 });

@@ -124,6 +124,14 @@ body {
 @keyframes l15{ 
   100%{transform: rotate(1turn)}
 }
+.error-message {
+    color: #fff;
+    -webkit-text-stroke: red;
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: 700;
+    display: none;
+}
 
 .account-popup {
     position: fixed;
