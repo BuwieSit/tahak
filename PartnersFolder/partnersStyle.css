@@ -1,1 +1,29 @@
 @import url('./globalStyle.css');
+
+
+.main-content {
+    width: 100%;
+    height: auto;
+    padding: 3% 0;
+}
+
+.partner-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    
+}
+
+.partner-img {
+    width: 15%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+}
+.partner-desc {
+    width: 50%;
+    text-align: justify;
+}
