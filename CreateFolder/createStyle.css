@@ -7,6 +7,66 @@
     display: flex;
     flex-direction: row;   
 }
+
+.intro-cont {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: calc(-4vh - 4%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/seed-stock.png') center center no-repeat fixed;
+    background-size: cover;
+    z-index: 1;
+    color: white;
+}
+
+.intro-cont::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+    pointer-events: none;
+}
+
+.intro-cont > * {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-title {
+    width: 60%;
+    text-align: center;
+    font-family: titleFont;
+    font-weight: 500;
+    font-size: clamp(3rem, 3vw, 4rem);
+    text-wrap: nowrap;
+}
+
+.intro-button {
+    padding: 2%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    border: none;
+    background-color: #3B7A57;
+    font-family: textFont;
+    font-weight: 600;
+    font-size: clamp(1rem, 1vw, 2rem);
+    transition: all 0.3s ease;
+}
+
+.intro-button:hover {
+    background-color: #265039;
+    transform: scale(1.1);
+}
+
+.intro-button:active {
+    transform: scale(0.9);
+}
 .create-wrapper {
     width: 50%;
 }

@@ -23,7 +23,20 @@ window.addEventListener('DOMContentLoaded', () => {
                             <li>Partners</li>
                             <li>FAQs</li>
                 </ul> 
-                <img class="user-icon" src="${prefix}images/user.png">
+            <div class="lang-select-wrapper">
+                <div class="lang-selected">
+                    <img class="lang-icon" src="${prefix}images/uk.png" alt="Selected Language">
+                </div>
+                <ul class="lang-dropdown hidden">
+                    <li class="lang-option"><img class="lang-icon" src="${prefix}images/uk.png" alt="English"></li>
+                    <li class="lang-option"><img class="lang-icon" src="${prefix}images/korea.png" alt="French"></li>
+                    <li class="lang-option"><img class="lang-icon" src="${prefix}images/france.png" alt="German"></li>
+                    <li class="lang-option"><img class="lang-icon" src="${prefix}images/japan.png" alt="Japanese"></li>
+                    <li class="lang-option"><img class="lang-icon" src="${prefix}images/philippines.png" alt="Filipino"></li>
+                </ul>
+            </div>
+            <img class="user-icon" src="${prefix}images/user.png">
+
             `;
 
     if (header) {
@@ -76,4 +89,27 @@ window.addEventListener('DOMContentLoaded', () => {
         window.location.href = `${prefix}AccountPage/user.html`;
     });
     
+    const langSelect = document.querySelector('.lang-selected');
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const selectedLangIcon = langSelect.querySelector('img');
+
+    // Toggle dropdown visibility
+    langSelect.addEventListener('click', () => {
+        langDropdown.classList.toggle('hidden');
+    });
+
+    // Select language and update icon
+    langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const newSrc = option.querySelector('img').src;
+            selectedLangIcon.src = newSrc;
+            langDropdown.classList.add('hidden');
+
+            // Optional: set selected language logic here
+            console.log("Language selected:", newSrc);
+        });
+    });
+
+
 });
