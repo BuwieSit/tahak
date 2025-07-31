@@ -1,1 +1,75 @@
 @import url('./globalStyle.css');
+
+
+.main-content {
+    width: 100%;
+    padding: 3% 0;   
+    display: flex;
+    flex-direction: row;   
+}
+.create-wrapper {
+    width: 50%;
+}
+.create-list {
+    list-style-type: none;
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.create-list > li {
+    width: 100%;
+    padding: 2%;
+    display: block;
+    cursor: pointer;
+    transform: all 0.3s ease;
+    border-radius: 20px;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.create-list > li:hover {
+    background-color: #3B7A57;
+}
+
+.create-tour {
+    min-height: 10%;
+    height: auto;
+    border: 2px dashed #aaa; 
+    padding: 2%;
+
+}
+.popup-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #9b4343;
+    color: #ffffff;
+    padding: 12px 18px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 10000;
+    animation: fadeOut 3s ease forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.dragging {
+    background-color: #ffcccc !important;
+}
+
+.already-added {
+    background-color: #af6161;
+}
+
+.dropped-activity:hover {
+    background-color: #f0f0f0;
+}

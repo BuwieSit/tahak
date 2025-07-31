@@ -4,6 +4,13 @@ function normalize(str) {
     return str.trim().toLowerCase();
 }
 
+const actionBtn = document.querySelector('.action-button');
+actionBtn.addEventListener('click', () => {
+
+    window.location.href = './PackageFolder/packages.html';
+});
+
+
 navlist.forEach(nav => {
     nav.addEventListener('click', () => {
         const key = normalize(nav.textContent);

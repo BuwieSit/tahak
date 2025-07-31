@@ -7,13 +7,60 @@
     padding: 3% 0;
 }
 
+.intro-cont {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: calc(-4vh - 4%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/pictures/falls.jpg') center center no-repeat fixed;
+    background-size: cover;
+    z-index: 1;
+    color: white;
+}
+
+.intro-cont::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+    pointer-events: none;
+}
+
+.intro-cont > * {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-title {
+    width: 60%;
+    text-align: center;
+    font-family: titleFont;
+    font-weight: 500;
+    font-size: clamp(3rem, 3vw, 4rem);
+}
+
 .partner-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 5%;
-    
+}
+
+.partner-title {
+    font-family: titleFont;
+    font-size: clamp(2rem, 2vw, 3rem);
+    text-align: center;
+}
+.partner-name {
+    font-weight: 600;
+    font-family: textFont;
+    font-size: clamp(1.5rem, 1vw, 2rem);
 }
 
 .partner-img {
@@ -26,4 +73,7 @@
 .partner-desc {
     width: 50%;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

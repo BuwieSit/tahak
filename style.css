@@ -82,15 +82,12 @@ body {
 .intro-title {
     font-family: secondFont;
     font-size: clamp(2rem, 5vw, 4rem);
-
 }
 .intro-subtitle {
     font-family: textFont;
     font-style: italic;
     font-size: clamp(1rem, 1vw, 1.5rem);
     width: 50%;
-
-
 }
 .custom-shape-divider-bottom-1752798360 {
     position: absolute;

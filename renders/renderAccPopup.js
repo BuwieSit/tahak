@@ -172,5 +172,5 @@ function renderAccPopup() {
     });
 }
 
-// Auto-run when this file is imported
+
 renderAccPopup();

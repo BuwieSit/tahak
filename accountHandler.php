@@ -1,5 +1,6 @@
 <?php
 include './conn.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'login') {
     $username = $_POST['username'];
@@ -19,17 +20,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'login') {
     $result = mysqli_stmt_get_result($stmt);
 
     if ($row = mysqli_fetch_assoc($result)) {
-        // For demo: assume password stored in plain text (not recommended in real apps!)
         if ($row['password'] === $password) {
+            // Save username and seed points in session
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['seed'] = $row['seed'];
+            $_SESSION['profile'] = $row['profile'];
+            $_SESSION['email'] = $row['email'];
+            
             echo 'success';
             exit();
         } else {
             echo 'wrong_credentials';
+                exit();
+            }
+        } else {
+            echo 'no_account';
             exit();
         }
-    } else {
-        echo 'no_account';
-        exit();
     }
-}
 ?>
