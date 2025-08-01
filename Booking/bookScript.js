@@ -1,47 +1,53 @@
 const selectedPackage = localStorage.getItem('package');
 const bookTitle = document.querySelector('.booked-title');
-const brochure = document.querySelectorAll('.brochure');
-//bookTitle.textContent = selectedPackage;
+const brochureContainer = document.querySelector('.main-content');
 
- const path = window.location.pathname;
-    const depth = path.split('/').filter(Boolean).length;
+// Update booked title
 
-    let prefix = './';
-    if (depth === 2) prefix = '../';
-    if (depth >= 3) prefix = '../../';
+// Get correct path prefix based on current location
+const path = window.location.pathname;
+const depth = path.split('/').filter(Boolean).length;
 
-if (selectedPackage && selectedPackage.trim().toLowerCase() === 'kapwa immersion journey') {
-    // Set multiple brochure images
-    const kapwaImages = [
+let prefix = './';
+if (depth === 2) prefix = '../';
+if (depth >= 3) prefix = '../../';
+
+// Define image lists per package
+const brochureImages = {
+    'kapwa immersion journey': [
         `${prefix}images/DOLLARS/kapwa_1.png`,
-        `${prefix}images/DOLLARS/kapwa_2.png` // Add more if needed
-    ];
+        `${prefix}images/DOLLARS/kapwa_2.png`
+        // Add more images here if needed
+    ]
+    // You can add other packages and images similarly
+};
 
-    // Set each brochure image src
-    brochure.forEach((img, index) => {
-        if (kapwaImages[index]) {
-            img.src = kapwaImages[index];
-        }
+// Convert selected package name to lowercase
+const packageKey = selectedPackage ? selectedPackage.trim().toLowerCase() : null;
+
+if (packageKey && brochureImages[packageKey]) {
+    // Clear existing brochures
+    brochureContainer.innerHTML = '';
+
+    // Generate new brochure <img> tags
+    brochureImages[packageKey].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.classList.add('brochure'); // Keep the class for styling
+        brochureContainer.appendChild(img);
     });
 }
 
-
+// Handle radio buttons (your existing code)
 const radio = document.querySelectorAll('.form-radio');
-const label = document.querySelectorAll('.radio-label');
-
-
 radio.forEach(r => {
-
     r.addEventListener('click', () => {
         const key = r.value;
         console.log(key);
-
-
     });
-
 });
 
+// Placeholder function
 function bookSubmit() {
-
+    // Add booking logic here
 }
-
