@@ -1,25 +1,29 @@
 @import url('../globalStyle.css');
 
+
 .main-content {
     padding: 3% 0;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
     align-items: center;
     justify-content: center;
-    gap: 30px;
     width: 100%;
     height: auto;
     background: url('../images/pictures/treeplant.jpg') 100% fixed;
     background-size: cover;
     position: relative;
+    gap: -10px;
 
 }
 .brochure {
-    margin-right: 20%;
-    width: 50%;
+    width: 400px;
+
 }
 .side-book {
+    display: none;
     position: fixed;
+    height: 50%;
+    overflow: auto;
     width: 300px;
     top: 50%;
     left: 85%;

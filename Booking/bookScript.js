@@ -35,16 +35,16 @@ sideBooking.innerHTML = `
 
 const brochureImages = {
     'kapwa immersion journey': [
-        `${prefix}images/DOLLARS/kapwa_1.png`,
-        `${prefix}images/DOLLARS/kapwa_2.png`
+        `${prefix}images/PESO/kapwa_1.png`,
+        `${prefix}images/PESO/kapwa_2.png`
     ],
     'ugnayan wellness retreat': [
-        `${prefix}images/DOLLARS/ugnayan_1.png`,
-        `${prefix}images/DOLLARS/ugnayan_2.png`
+        `${prefix}images/PESO/ugnayan_1.png`,
+        `${prefix}images/PESO/ugnayan_2.png`
     ],
     'sama-sama wellness escape': [
-        `${prefix}images/DOLLARS/sama_1.png`,
-        `${prefix}images/DOLLARS/sama_2.png`
+        `${prefix}images/PESO/sama_1.png`,
+        `${prefix}images/PESO/sama_2.png`
     ]
 };
 
