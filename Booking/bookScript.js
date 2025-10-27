@@ -1,5 +1,4 @@
 const selectedPackage = localStorage.getItem('package');
-const bookTitle = document.querySelector('.booked-title');
 const brochureContainer = document.querySelector('.main-content');
 
 console.log('Selected package:', selectedPackage);
@@ -12,7 +11,7 @@ let prefix = './';
 if (depth === 2) prefix = '../';
 if (depth >= 3) prefix = '../../';
 
-// Create sticky booking sidebar
+// Create side booking form (hidden by default)
 const sideBooking = document.createElement('div');
 sideBooking.className = 'side-book';
 sideBooking.innerHTML = `
@@ -34,7 +33,6 @@ sideBooking.innerHTML = `
     </form>
 `;
 
-// Define image lists per package
 const brochureImages = {
     'kapwa immersion journey': [
         `${prefix}images/DOLLARS/kapwa_1.png`,
@@ -53,33 +51,23 @@ const brochureImages = {
 // Normalize package key
 const packageKey = selectedPackage ? selectedPackage.trim().toLowerCase() : null;
 
-// Generate brochures and add sticky booking form
 if (packageKey && brochureImages[packageKey]) {
-    brochureContainer.innerHTML = '';  // Clear existing content
+    brochureContainer.innerHTML = ''; 
 
-    // Append each brochure image
     brochureImages[packageKey].forEach(src => {
         const img = document.createElement('img');
         img.src = src;
         img.classList.add('brochure');
         brochureContainer.appendChild(img);
+
+        // Click to show or hide booking sidebar
+        img.addEventListener('click', () => {
+            sideBooking.style.display = 
+                sideBooking.style.display === 'block' ? 'none' : 'block';
+        });
     });
 
-    // Append sticky booking sidebar
     brochureContainer.appendChild(sideBooking);
 } else {
     console.warn('No images found for package:', packageKey);
-}
-
-// Handle radio buttons
-const radio = document.querySelectorAll('.form-radio');
-radio.forEach(r => {
-    r.addEventListener('click', () => {
-        const key = r.value;
-        console.log(key);
-    });
-});
-
-function bookSubmit() {
-    // Booking logic placeholder
 }
