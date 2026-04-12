@@ -55,6 +55,12 @@ closeBtn.addEventListener("click", () => {
     sideBooking.style.display = "none";
 });
 
+const ctaBtn = document.querySelector('.cta-button');
+
+ctaBtn.addEventListener("click", () => {
+    sideBooking.style.display = "block";
+})
+
 const brochureImages = {
     'kapwa immersion journey': [
         `${prefix}images/PESO/kapwa_1.png`,
